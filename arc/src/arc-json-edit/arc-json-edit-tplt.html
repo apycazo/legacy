@@ -1,0 +1,21 @@
+<div ng-style="config.styles.template" class="{{config.css.template}}">
+
+	<h2>{{ config.translate( config.title ) }}</h2>
+
+	<hr>
+
+	<form name="form" class="css-form" novalidate>
+
+		<div ng-repeat="(index, value) in config.dataModel.fields">
+			<label>{{ config.translate(value) }}</label>
+			<input ng-model="data[value]">
+		</div>
+
+		<div>
+			<span ng-repeat="(index, value) in config.buttonList">
+				<button ng-click="value.onClick(data, modalInstance)">{{ config.translate(value.text) }}</button>
+			</span>
+		</div>
+
+	</form>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>ArC Demo</title>
+
+  		<!-- Angular libraries -->
+        <script src="https://code.angularjs.org/1.3.1/angular.min.js"></script>
+  		<script src="https://code.angularjs.org/1.3.1/angular-route.min.js"></script>        
+
+        <!-- Bootstrap dependencies -->
+        <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css"/>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+        <!-- Angular UI -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap-tpls.min.js"></script>
+
+        <!-- Fontawesome dependencies -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  		<script></script>
+
+      <script type="text/javascript">
+            // Core module
+            var core = angular.module('arc',['ui.bootstrap']);
+      </script>
+      
+      <script src="arc-json-edit.js"></script>
+      <script src="arc-core.js"></script>
+
+      <style>
+            body { padding : 25px; }
+            label { display: block; width: 6em; float: left; }
+            .arc-json-edit-template h2 { color : red; }
+      </style>
+
+  	</head>
+
+    <!--
+    <body></body>
+    -->
+    
+  	<body ng-app="arc">
+  		<div ng-controller="CoreCtrl">
+  			<p>{{text}}</p>
+            <button ng-click="test()">Test</button>
+  		</div>
+	</body>
+    
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<title>ArC Demo</title>
+
+  		<!-- Angular libraries -->
+        <script src="https://code.angularjs.org/1.3.1/angular.min.js"></script>
+  		<script src="https://code.angularjs.org/1.3.1/angular-route.min.js"></script>        
+
+        <!-- Bootstrap dependencies -->
+        <!-- <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css"/>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+        <!-- Angular UI -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap-tpls.min.js"></script>
+
+        <!-- Fontawesome dependencies -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  		<script>
+
+            // Core module
+            var core = angular.module('arc',[]);
+
+            // Service
+            function CommonSrvc () {
+
+                // Creates the service instance
+                return {
+                    showAlert : function (text) {
+
+                        text = angular.isDefined(text) ? text : 'An alert has been thrown';
+                        alert(text);
+                    }
+                }
+            }
+
+            core.factory('CommonSrvc', CommonSrvc);
+
+            // Controller
+            function CoreCtrl ($scope, commonSrvc) {
+
+                $scope.text = 'Angular library loaded and working';
+
+                $scope.showAlert = function () {
+
+                    commonSrvc.showAlert('Enter key has been pressed');
+                }
+            }
+
+            core.controller('CoreCtrl', ['$scope', 'CommonSrvc', CoreCtrl]);
+
+  		</script>
+
+      <script src="arc-keypress.js"></script>
+
+      <style>
+            body {
+                padding : 25px;
+            }
+      </style>
+
+  	</head>  		
+
+  	<body ng-app="arc">
+  		<div ng-controller="CoreCtrl">
+  			<p>{{text}}</p>
+            <input type="text" arc-keypress="showAlert()" />
+  		</div>
+
+	</body>
+</html>
