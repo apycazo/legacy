@@ -1,0 +1,26 @@
+# Spring config
+spring:
+  application:
+     name: voodoo
+
+# Servlet settings
+server:
+  port: 8080
+  contextPath: /voodoo
+
+# Specific voodoo settings
+voodoo:
+  rest:
+    cors: true
+    components:
+      filter.enable: true
+    api:
+      echo:
+        mapping: /echo
+        enable: true
+      unmapped.enable: true
+
+  # Just for testing
+  debugOptions:
+    - optionOne
+    - optionTwo
