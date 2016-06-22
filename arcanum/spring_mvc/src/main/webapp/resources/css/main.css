@@ -1,0 +1,23 @@
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+table, td, th {
+    border:1px solid blue;
+}
+
+th {
+    background-color:blue;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+td {
+    min-width: 100px;
+    text-align: center;
+}
+
+
+

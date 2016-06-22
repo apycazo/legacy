@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <!-- Use debug mode -->
+    <constant name="struts.devMode" value="true" />	
+    
+    <package name="Reference" namespace="/pages" extends="struts-default">
+        <action name="About">
+            <result>about.jsp</result>
+        </action>
+        <action name="Home" class="com.github.apycazo.arcanum.struts_basic_xml.DefaultAction">
+            <result name="redirect_home">homePage.jsp</result>
+        </action>
+        
+        <!-- Actions to show usage of form data and model driven interface -->
+        <action name="ReadUser" class="com.github.apycazo.arcanum.struts_basic_xml.UserReadAction">
+            <result name="success">readUserData.jsp</result>
+        </action>
+        <action name="ShowReadUser" class="com.github.apycazo.arcanum.struts_basic_xml.UserReadAction">
+            <result name="success">showUserData.jsp</result>
+        </action>
+        
+        <!-- Actions to show usage of iterated views -->
+        <action name="Iterated" class="com.github.apycazo.arcanum.struts_basic_xml.IteratedModelAction">
+            <result name="success">iteratedView.jsp</result>
+        </action>
+    </package> 
+</struts>

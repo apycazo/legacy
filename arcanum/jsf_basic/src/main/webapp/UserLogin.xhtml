@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>JSF 2.0 Basic usage</title>
+    </h:head>
+    <h:body>
+    	<h3>Login user</h3>
+        <hr></hr>
+    	<h:form>
+    	   <h:inputText value="#{userDomain.name}" id="username"></h:inputText>
+    	   <h:commandButton value="Login" action="UserHome"></h:commandButton>
+           <h:commandButton value="Ajax check">
+    		 <f:ajax execute="username" render="output" />
+    	   </h:commandButton>
+           <h2><h:outputText id="output" value="#{userDomain.userid}" /></h2>
+    	</h:form>
+    </h:body>
+</html>
+
