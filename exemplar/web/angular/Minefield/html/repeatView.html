@@ -1,0 +1,18 @@
+<div ng-controller='repeatController'>
+	<h2>Repeat directive</h2>
+	<div>
+		<button ng-click="item.name='grapes'; item.price=2.0">Default</button>
+		<span>New item</span><input ng-model='item.name'/>
+		<span>Price</span><input ng-model='item.price'/>
+		<button ng-click="add(item.name, item.price)">Add item</button>
+
+	<div>
+	<hr/>
+	<div ng-repeat='item in items'>
+		<span>Item: {{item.name}}</span>
+		<input ng-model='item.quantity'></input>
+		<span>Price: {{item.price}}</span>
+		<span>Total cost: {{item.price * item.quantity}}</span>
+		<button ng-click="remove($index)">Remove item</button>
+	</div>
+</div>

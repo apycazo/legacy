@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Bender</display-name>
+  <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class> com.sun.jersey.spi.container.servlet.ServletContainer </servlet-class>
+     <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>es.bender.rest</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+</web-app> 
+
+<!-- Primero declaramos que esta configuración se aplica para la aplicación Bender; ver index.html -->
+<!-- Indicamos cual es el primer fichero que queremos que se cargue; en este caso index.html -->
+<!-- Declaramos la presencia de un servlet (en versiones modernas lo autodecta al aplicarle la etiqueta @servlet -->
+<!-- Le ponemos nombre al servlet; en este caso: Jersey REST Service -->
+<!-- Indicamos el paquete donde se encuentran las clases y servicios de este servlet; en este caso en el paquete es.bender.rest -->
+<!-- Mapeamos la ruta del servlet definido; indicando que para ese servlet-name (Jesrsey REST Service) la url es ./rest/* -->
+<!-- De esta forma siempre que se acceda a la url-del-dominio/rest/lo-que-sea buscará lo que sea en el paquete indicado antes -->

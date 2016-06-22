@@ -1,0 +1,32 @@
+<h2>Sign Up example</h2>
+<form name='addUserForm'>
+	<div>First name: 
+		<input name="username" ng-model='user.first' required/>
+		<span class="error" ng-show="addUserForm.username.$error.required">Required</span>
+	</div>
+	<div>Last name: 
+		<input name="userlast" ng-model='user.last' required/>		
+		<span class="error" ng-show="addUserForm.userlast.$error.required">Required</span>
+	</div>
+	<div>Email: 
+		<input name="usermail" type='email' ng-model='user.email' required/>
+		<span class="error" ng-show="addUserForm.usermail.$error.required">Required</span>
+		<span class="error" ng-show="addUserForm.usermail.$error.email">Mail not valid</span>
+	</div>
+	<div>Age: 
+		<input name="userage" type='number' ng-model='user.age' ng-maxlength='3' ng-minlength='1' min=5 required/>
+		<span class="error" ng-show="addUserForm.userage.$error.required"> Required</span>
+		<span class="error" ng-show="addUserForm.userage.$error.maxlength"> Too large</span>
+	</div>
+	<div>Incorporation date: 
+		<input name="userdate" ng-model='user.date' 
+			ng-pattern="/^(0?[1-9]|[1-2][0-9]|30|31)\-(0?[1-9]|1[0-2])\-[0-2][0-9][0-9][0-9]$/"/>
+		<span class="error" ng-show="addUserForm.userdate.$error.pattern">Wrong pattern (DD-MM-YYYY)</span>
+	</div>
+	<div>
+		<button ng-click="addUser()" ng-disabled='!addUserForm.$valid'>Submit</button>
+	</div>
+</form>
+<div>
+	<p>{{message}}</p>
+</div>

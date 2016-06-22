@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <context:component-scan base-package="com.github.apycazo.quinielator2" />
+
+    <!-- Configures the annotation programming model -->
+    <mvc:annotation-driven/>
+    
+    <!-- Allows for annotations on DAO classes -->
+    <tx:annotation-driven proxy-target-class="true"/>
+       
+    <!-- This allows to refer to the model and view at /WEB-INF/views/main.jsp just as "main" -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    
+    <!-- Component beans -->  
+    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:/database.properties</value>
+        </property>
+    </bean>
+ 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />        
+    </bean>
+    
+    <!-- Hibernate session factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+ 
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+ 
+        <property name="hibernateProperties">
+            <props>
+                <!-- Database dialect to use -->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!-- Show SQL queries -->
+                <prop key="hibernate.show_sql">false</prop>
+                <!-- Recreate the DB on start (remove for production) -->
+                <prop key="hibernate.hbm2ddl.auto">${jdbc.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+ 
+        <property name="annotatedClasses">
+            <list>
+                <value>com.github.apycazo.quinielator2.domain.model.MatchInfo</value>
+            </list>
+        </property> 
+    </bean>
+    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    <!--<bean id="downloader" class="com.github.apycazo.quinielator2.network.MatchDataDownloader"/>-->
+    <!--<bean id="http" class="com.github.apycazo.quinielator2.network.HttpWrapper"/>-->
+
+</beans>

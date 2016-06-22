@@ -1,0 +1,19 @@
+# generic files to ignore
+
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Java classes
+*.class
+
+# Netbeans ignore personal stuf
+private/
+
+# Dist & Targets
+target/
+dist/
+build/
+

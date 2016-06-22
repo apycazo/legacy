@@ -1,0 +1,10 @@
+<div>
+	<h2>CSS style</h2>
+	<input type="checkbox" ng-model="selected">Select</input>
+	<!-- using default css class -->
+	<p class='selected-text-{{selected}}'>This text should be blue if selected, red otherwise</p>
+	<!-- using angular css class -->
+	<p ng-class='{"selected-text" : selected, "unselected-text": !selected}'>
+		This text should be blue if selected, red otherwise
+	</p>
+</div>

@@ -1,0 +1,77 @@
+<html>
+	<head>
+		
+		<script src="libs/angular.min.js"></script>
+		<script src="libs/angular-route.min.js"></script>
+		<script src="libs/angular-animate.min.js"></script>
+		
+		<!--script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+		script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
+		<script src="http://code.angularjs.org/1.2.0-rc.3/angular-route.min.js"></script-->
+
+		<script src="js/modController.js"></script>
+		<script src="js/modServices.js"></script>
+		<script src="js/modCore.js"></script>
+
+		<script src="js/templates.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+
+	</head>
+
+	<body ng-app="Minefield">
+
+		<div class="header bigfont">
+			Angular Minefield
+		</div>
+		<div class="content">
+			<!-- Indice de ejemplos -->			
+			<div class="column left">
+				<div class="column left">
+					<h2>Basic demonstrators</h2>
+					<a href="#/simple">Simple controller</a><br/>
+					<a href="#/repeat">Repeat controller</a><br/>
+					<a href="#/form">Form controller</a><br/>
+					<a href="#/css">Css controller</a><br/>
+					<a href="#/services">Services controller</a><br/>
+					<a href="#/route/0">Routing controller A</a><br/>
+					<a href="#/route/1">Routing controller B</a><br/>
+					<a href="#/directive">Directives</a><br/>
+					<a href="#/validation">Validation</a><br/>
+					
+					<a href="#/err">Error</a><br/>
+
+					<h3>Advanced directive</h3>
+					<div ng-controller="collapsibleController">
+						<collapsible custom-title="title">{{text}}</collapsible>
+					</div>					
+
+				</div>	
+				<div class="column right">
+					<h2>Animation demonstrators</h2>
+					<a href="#/basicAnimation">Basic</a><br/>
+					<h2>Templates from source code</h2>
+					<a href="#/small">Templates from code</a><br/>
+					<a href="#/templateTextLite">Another template (lite)</a><br/>
+					<a href="#/templateText">Another template (lib)</a><br/>
+					<div ng-controller="templateLinker">
+						<div ng-repeat="template in templates">
+							<a href="#/{{template.name}}">{{template.longname || template.name}}</a><br/>
+						</div>
+					</div>
+					<h2>Template as directive</h2>
+					<div>
+						<cslnk/>
+					</div>
+					<div>
+						<directive/>
+					</div>
+				</div>			
+			</div>
+			<h2>Loaded views below here</h2>
+			<hr/>
+			<div ng-view class="column right"></div>
+		</div>
+	</body>
+</html>

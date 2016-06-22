@@ -1,0 +1,13 @@
+<div>
+	<h2>Services test</h2>
+	<span>URL: {{url}}</span>
+	<span>Lag: {{lag}}</span>
+	<br/><button ng-click="getData()">Get server data (mock)</button>
+	<br/><button ng-click="clear()">Clear data (mock)</button>
+	<br/>
+	<hr/>
+	<p>Online mockup response: Default code is 52653f714e3560b40151d9e5</p>
+	<input ng-model="code"></input>
+	<br/><button ng-click="getJson(code)">Get json</button>
+	<br/><p>Response: {{jsonResponse}}</p>
+</div>

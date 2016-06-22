@@ -1,0 +1,40 @@
+
+	<!-- Este código será cargado en el ng-view cuando sea necesario :: ver app.js routeProvider -->
+
+	<!-- La directiva ng-controller indentifica el controllador que recibirá los eventos de este elemento -->
+	<!-- Los contenidos del controlador y sus variables son visibles dentro del entorno de este elemento -->
+<div id="header" ng-controller="homeCtrl">
+
+	
+		<!-- Mediante la notación {{ ... }} identificamos 'algo' que debe ser evaluado por angular, en este caso una variable -->
+	<div>This is {{currentView}}</div>
+		<!-- en este caso inyectamos la variable 'playerName' / ver homeCtrl.js / -->
+		<!-- Conoce el valor de playerName porque está en su $scope  -->
+	<div> I'm {{playerName}}</div>
+	
+		<!-- La directiva ng-click vincula el evento click con una función; getPlayerName -->
+		<!-- Esta función es visible porque pertenece al entorno (scope) del elemento que la contiene o de sus padres -->
+		<!-- En este caso la función pertence a homeCtrl que controla el elemento padre que lo contiene 'header' -->
+	<button ng-click="getPlayerName()">Get Name!</button>
+	<br />
+	<hr>
+	<br />
+	<div>
+		<input ng-model="playerName" type="textarea" placeholder="write here your name"></input><br />
+		<div>{{ playerName + "siiiii" }}</div>
+		<textarea ng-model="playerName"></textarea><br />
+		<span>{{playerName}}</span>
+	</div>
+	<hr>
+	<div>
+		<button ng-click="completePlayer()">Complete Player!</button><br />
+		<label>Player name: {{player.name}}</label><br />
+		<label>Player type: {{player.type}}</label><br />
+	</div>
+	<hr />
+	<div>
+		<a href="#/player">Go to Player</a>
+	</div>
+</div>
+
+

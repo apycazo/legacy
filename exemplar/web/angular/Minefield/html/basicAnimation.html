@@ -1,0 +1,16 @@
+<div class="well" style="margin-top: 30px; width: 200px; overflow: hidden;">
+
+	<div class="fader" ng-hide="checked">Animate this!</div>
+    <button ng-click="check()">Animate</button>
+
+    <form ng-submit="add(newTodo)">
+        <input type="text" ng-model="newTodo" class="form-control" placeholder="Name item, then press Enter" focus>
+    </form>
+    <div class="animatedItem" ng-repeat='item in items'>
+        <tt>{{item}}</tt>
+    </div>
+    <br/>
+    <button ng-click="remove()" ng-disabled="items.length == 0">{{items.length > 0 ? 'Remove ' + items[0] : 'Empty'}}</button>  
+</div>
+
+

@@ -1,0 +1,3 @@
+Proyect notes
+
+3 modules: services(spring-rest), db(hibernate), web(spring-mvc)
