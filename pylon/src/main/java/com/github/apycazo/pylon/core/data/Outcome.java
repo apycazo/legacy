@@ -1,0 +1,99 @@
+package com.github.apycazo.pylon.core.data;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
+
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author Andres Picazo
+ */
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder(value = {"success", "timestamp", "message", "data"})
+public class Outcome
+{
+    private boolean success = true;
+    private long timestamp = System.currentTimeMillis();
+    private String message = null;
+    private Object data = null;
+
+    public Outcome()
+    {
+        // empty constructor
+    }
+
+    public Outcome(boolean success)
+    {
+        this(success, null, null);
+    }
+
+    public Outcome(boolean success, String msg)
+    {
+        this(success, msg, null);
+    }
+
+    public Outcome(boolean success, String msg, Object data)
+    {
+        this.success = success;
+        this.message = msg;
+        this.data = data;
+    }
+
+    public ResponseEntity<Object> asResponseEntity()
+    {
+        return new ResponseEntity<>(this, HttpStatus.OK);
+    }
+
+    public ResponseEntity<Object> asResponseEntity(HttpStatus status)
+    {
+        return new ResponseEntity<>(this, status);
+    }
+
+    public static Outcome success()
+    {
+        return new Outcome(true);
+    }
+
+    public static Outcome success(String msg)
+    {
+        return new Outcome(true, msg);
+    }
+
+    public static Outcome failure(String msg)
+    {
+        return new Outcome(false, msg);
+    }
+
+    public static Outcome exception(Exception e)
+    {
+        return exception("An exception has been thrown", e);
+    }
+
+    public static Outcome exception(String msg, Exception e)
+    {
+        Outcome outcome = new Outcome(false, msg);
+        Map<String, Object> map = new LinkedHashMap<>();
+        map.put("exceptionName", e.getClass().getName());
+        map.put("exceptionMessage", StringUtils.isEmpty(e.getMessage()) ? "message not available" : e.getMessage());
+        try {
+            // Add stack elements
+            List<StackTraceElement> stackList = Arrays.asList(e.getStackTrace());
+            stackList.forEach(ste -> {
+                String location = String.format("%s->%s:%d", ste.getClassName(), ste.getMethodName(), ste.getLineNumber());
+                map.put("stack", location);
+            });
+        } catch (Exception e2) {
+            map.put("stack", "Unknown, stack not available");
+        }
+        outcome.data = map;
+        return outcome;
+    }
+}
