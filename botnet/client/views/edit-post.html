@@ -1,0 +1,66 @@
+<div id="new-post">
+	<div>
+		<div class="input-group">
+			<span class="input-group-addon">Post title</span>
+			<input placeholder="Write post title (mandatory)" class="form-control" ng-model="post.title"></input>
+			<a class="btn btn-primary input-group-addon" ng-click="h1()" ng-show="post.title!=''">H1</a>
+			<a class="btn btn-primary input-group-addon" ng-click="h2()" ng-show="post.title!=''">H2</a>
+			<a class="btn btn-primary input-group-addon" ng-click="bold()" ng-show="post.title!=''"><b>Bold</b></a>
+			<a class="btn btn-primary input-group-addon" ng-click="italics()" ng-show="post.title!=''"><i>Italic</i></a>
+			<a class="btn btn-primary input-group-addon" ng-click="image()" ng-show="post.title!=''">
+				<span class="glyphicon glyphicon-camera"></span>
+			</a>
+			<a class="btn btn-primary input-group-addon" ng-click="changeMode()" ng-show="post.title!=''">&lt;&#47;&gt;</a>
+		</div>
+	</div>
+	<textarea 
+		id="code-area"
+		placeholder="Enter new post text here (mandatory)"
+		class="col-md-12 top-gap-5" 
+		rows="5"
+		ng-show="post.title!=''"
+		ng-model="post.text">
+	</textarea>
+	<div ng-show="post.title!=''">
+		<button 
+			class="btn btn-primary top-gap-5" 
+			ng-click="postMessage()" 
+			ng-disabled="post.title=='' || post.text==''">
+			<span class="glyphicon glyphicon-globe"></span> {{postButtonText}}
+		</button>
+		<button 
+			class="btn btn-default top-gap-5" 
+			ng-click="clearPost()">
+			<span class="glyphicon glyphicon-fire"></span> Clear
+		</button>
+		<button 
+			class="btn btn-default top-gap-5" 
+			ng-click="appendFile">
+			<span class="glyphicon glyphicon-paperclip"></span> Append
+		</button>
+		<div class="pull-right top-gap-5">
+			<span>Restrict post</span>
+			<div class="btn-group">
+				<button 
+					class="btn btn-default " 
+					ng-class="{active : post.type == 'public'}" 
+					ng-click="selectPrivacy('public')">
+					Public
+				</button>
+				<button 
+					class="btn btn-default" 
+					ng-class="{active : post.type == 'registered'}" 
+					ng-click="selectPrivacy('registered')">
+					Registered
+				</button>
+				<button 
+					class="btn btn-default" 
+					ng-class="{active : post.type == 'friends'}" 
+					ng-click="selectPrivacy('friends')">
+					Friends
+				</button>
+			</div>
+		</div>
+	</div>
+	<hr/>
+</div>

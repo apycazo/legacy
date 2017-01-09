@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse navbar-fixed-top top-blue-border col-md-offset-1 col-md-10" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	    	<a class="navbar-brand" href="/">BotNet - The Robot Sports Network</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    	<form class="navbar-form navbar-right" role="login" ng-show="!logged">
+	        	<div class="form-group">
+	          		<input type="text" class="form-control" placeholder="User" ng-model='user.id'>
+	          		<input type="password" class="form-control" placeholder="Password" ng-model='user.pwd'>
+	        	</div>
+	        	<button type="submit" class="btn btn-success" ng-click="login(user.id,user.pwd)">Login</button>
+	        	<button class="btn btn-primary" ng-click="register()">Register</button>
+	      	</form>
+	      	<div class="btn-group navbar-btn navbar-right" ng-show="logged">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+			    	<span class="glyphicon glyphicon-user"></span> {{userlogged}}  <span class="caret"></span>
+			  	</button>
+			  	<ul class="dropdown-menu" role="menu">
+			  		<!-- TODO: Refresh is quite difficult to implement as a directive (without passing the server service) -->
+			  		<li>
+			  			<a href="" ng-click="refresh()" style="color:green;">
+			  				<span class="glyphicon glyphicon-refresh"></span>
+			  				Refresh
+			  			</a>
+			  		</li>
+			    	<li>
+			    		<a href="">
+			    			<span class="glyphicon glyphicon-cog"></span>
+			    			Configure
+			    		</a>
+			    	</li>
+				    <li>
+				    	<a href="">
+				    		<span class="glyphicon glyphicon-envelope"></span>
+				    		New message
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="">
+				    		<span class="glyphicon glyphicon-envelope" style="color: red;"></span>
+				    		Inbox
+				    		<span class="badge">0</span>
+				    	</a>
+				    </li>
+				    <li class="divider"></li>
+				    <li><a href="" ng-click="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+			  	</ul>			  	
+			</div>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>

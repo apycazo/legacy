@@ -1,0 +1,64 @@
+<div id="public_index">
+
+	<!-- 
+	=======================================================
+	Public content
+	=======================================================
+	-->
+
+	<div id="main-content" class="col-md-offset-1 col-md-10 bn-boxed">
+		<br/>
+
+		<!-- 
+		=======================================================
+		New post
+		=======================================================
+		-->
+		<div editpost ng-show="logged"></div>
+		<!-- 
+		=======================================================
+		Post list view
+		=======================================================
+		-->
+		<div id="post-list" ng-repeat='item in items' class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					{{item.title}}
+					<a ng-click="requestToEdit(item._id)" ng-show="isAdmin || item.author == userlogged">
+						<span class="glyphicon glyphicon-pencil clickable bn-margin-left-10" style="color : black;"></span>
+					</a>
+					<a ng-click="requestToDelete(item._id)" ng-show="isAdmin && $parent.markedToDelete == ''">
+						<span class="glyphicon glyphicon-remove clickable" style="color : red;"></span>
+					</a>					
+					<div id="delete_confirmation-{{$index}}" class="btn-group" ng-show="$parent.markedToDelete == item._id">
+						<button class="btn btn-xs btn-danger" ng-click="removePost(item._id)">Delete</button>
+						<button class="btn btn-xs btn-warning" ng-click="cancelDelete()">Cancel</button>
+					</div>
+					<span class="label label-danger pull-right">{{item.author}}</span>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<p>
+					<span class="label label-success" ng-show="{{item.type=='public'}}"> Public</span>
+					<span class="label label-warning" ng-show="{{item.type=='registered'}}"> Registered</span>
+					<span class="label label-danger" ng-show="{{item.type=='friends'}}"> Friends</span>
+					{{item.ts | date:'MM/dd/yyyy @ h:mma'}}
+				</p>
+				<div class="post-small">
+					<div id="user_info" class="col-md-1">
+						<img src="{{item.img}}" alt="No img found" 
+							class="pull-left img-thumbnail img-user">
+						</img>
+					</div>						
+					<p ng-bind-html="item.content" class="col-md-11"></p>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<ul class="pager">
+			<li><a href="" ng-show="hasPreviousPages" ng-click="refresh(-1)">Previous 10</a></li>
+			<li><a href="" ng-show="hasMorePages" ng-click="refresh(1)">Next 10</a></li>
+		</ul>
+	</div>
+
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="BotNet">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <!-- JQuery, required for bootstrap -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Others -->
+    <!-- Local dependencies -->
+    <!--    
+    <script src="/libs/wysihtml5/wysihtml5-0.3.0.min.js"></script>
+    <script src="/libs/wysihtml5/bootstrap3-wysihtml5.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap-wysihtml5-0.0.2.css">
+    -->
+    <!-- External scripts - Angular -->
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular-animate.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular-route.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0-rc.3/angular-resource.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+    <!-- External scripts - Bootstrap -->    
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
+    <!-- Local scripts -->
+    <script type="text/javascript" src="/js/modServices.js"></script>
+    <script type="text/javascript" src="/js/modControllers.js"></script>
+    <script type="text/javascript" src="/js/modDirectives.js"></script>
+    <script type="text/javascript" src="/js/app-fe.js"></script>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.0.2/text-angular.min.js'></script>
+  </head>
+  <body>
+    <br/>
+    <div navbar></div>
+    <ng-view></ng-view>
+  </body>
+</html>

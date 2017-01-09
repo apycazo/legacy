@@ -1,0 +1,99 @@
+.post-small {
+	min-height: 150px;
+}
+
+.bn-margin-right-10 {
+	margin-right : 10px;
+}
+
+.bn-margin-left-10 {
+	margin-left : 10px;
+}
+
+.bn-boxed {
+	background-color: #F8F8F8;
+	border-style:solid;
+	border-width:5px;
+	/*border-color: #e7e7e7;*/
+	border-color: #428BCA;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	margin-top: 50px;
+	background-color: #2E2E2E;
+	color: #FFFFFF;
+}
+
+.clickable:hover {
+	cursor: pointer; 
+	cursor: hand;
+}
+
+.top-gap-5 {
+	margin-top: 5px;
+}
+
+.blue-text {
+	color : #88AAFF;
+}
+
+.top-blue-border {
+	border-color: #428BCA !important;
+	border-width: 5px 0 5px 0 !important;
+}
+
+#post-list > div.panel-body {
+	background-color: #2E2E2E;
+}
+
+.panel {
+    border: 0 !important;
+}
+
+div.input-group > input, textarea {
+	background-color: #EEEEEE;
+	color: #000000 !important; /* Makes sure text is black, and not bn-boxed white */
+	border-style:solid;
+	border-width:1px;
+	border-color: #ccc;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.textarea-like {
+	background-color: #EEEEEE;
+	color: #000000 !important; /* Makes sure text is black, and not bn-boxed white */
+	border-style:solid;
+	border-width:1px;
+	border-color: #ccc;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-height: 250px;	
+}
+
+body {
+	background-color: #5F5F5F !important;
+}
+
+.navbar-inverse .navbar-brand {
+	color : #88AAFF !important;
+}
+
+.navbar-inverse .navbar-brand:hover {
+	color : #FFFFFF !important;
+}
+
+.pager li>a, .pager li>span {
+	background-color: #000 !important;
+}
+
+.pager li>a:hover, .pager li>span:hover {
+	color: #FFF !important;
+}
+
+.img-user {
+	min-height: 100px;
+	min-width: 100px;
+	margin-left: -15px;
+}
+

@@ -1,0 +1,176 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'node-debug' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'node-debug', null ]
+5 verbose cache add name=undefined spec="node-debug" args=["node-debug",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'node-debug',
+6 verbose parsed url   path: 'node-debug',
+6 verbose parsed url   href: 'node-debug' }
+7 silly lockFile 1a4cd868-node-debug node-debug
+8 verbose lock node-debug /home/manager/.npm/1a4cd868-node-debug.lock
+9 silly lockFile 1a4cd868-node-debug node-debug
+10 silly lockFile 1a4cd868-node-debug node-debug
+11 verbose addNamed [ 'node-debug', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 12d19e6e-node-debug node-debug@
+14 verbose lock node-debug@ /home/manager/.npm/12d19e6e-node-debug.lock
+15 silly addNameRange { name: 'node-debug', range: '*', hasData: false }
+16 verbose url raw node-debug
+17 verbose url resolving [ 'https://registry.npmjs.org/', './node-debug' ]
+18 verbose url resolved https://registry.npmjs.org/node-debug
+19 info trying registry request attempt 1 at 14:43:28
+20 http GET https://registry.npmjs.org/node-debug
+21 http 200 https://registry.npmjs.org/node-debug
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Tue, 11 Mar 2014 13:43:29 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+22 silly registry.get     etag: '"67XNCYZ6LRRQNB3IUE1N6ADIQ"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     'cache-control': 'max-age=1',
+22 silly registry.get     'content-length': '3449',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-v44-ASH, cache-lcy1120-LCY',
+22 silly registry.get     'x-cache': 'MISS, MISS',
+22 silly registry.get     'x-cache-hits': '0, 0',
+22 silly registry.get     'x-timer': 'S1394545408.986796141,VS0,VS-910,VE-892,VE97',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'node-debug', range: '*', hasData: true }
+24 silly addNameRange versions [ 'node-debug', [ '0.0.0', '0.1.0' ] ]
+25 verbose addNamed [ 'node-debug', '0.1.0' ]
+26 verbose addNamed [ '0.1.0', '0.1.0' ]
+27 silly lockFile eb98c5d3-node-debug-0-1-0 node-debug@0.1.0
+28 verbose lock node-debug@0.1.0 /home/manager/.npm/eb98c5d3-node-debug-0-1-0.lock
+29 silly lockFile 114cc59f--node-debug-node-debug-0-1-0-tgz https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz
+30 verbose lock https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz /home/manager/.npm/114cc59f--node-debug-node-debug-0-1-0-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz',
+31 verbose addRemoteTarball   '1602c22f1a624843ab3e9373e2e0d1673992f040' ]
+32 info retry fetch attempt 1 at 14:43:29
+33 verbose fetch to= /home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz
+34 http GET https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz
+35 http 200 https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz
+36 verbose tar unpack /home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz
+37 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+38 verbose lock tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package /home/manager/.npm/b483ce0a-09110-0-4564999518916011-package.lock
+39 silly lockFile 886db41a-09110-0-4564999518916011-tmp-tgz tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz
+40 verbose lock tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz /home/manager/.npm/886db41a-09110-0-4564999518916011-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry README.md
+44 silly gunzTarPerm extractEntry bin/node-debug.js
+45 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+46 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+47 silly lockFile 886db41a-09110-0-4564999518916011-tmp-tgz tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz
+48 silly lockFile 886db41a-09110-0-4564999518916011-tmp-tgz tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/tmp.tgz
+49 verbose tar pack [ '/home/manager/.npm/node-debug/0.1.0/package.tgz',
+49 verbose tar pack   '/home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package' ]
+50 verbose tarball /home/manager/.npm/node-debug/0.1.0/package.tgz
+51 verbose folder /home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+52 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+53 verbose lock tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package /home/manager/.npm/b483ce0a-09110-0-4564999518916011-package.lock
+54 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+55 verbose lock tar:///home/manager/.npm/node-debug/0.1.0/package.tgz /home/manager/.npm/c9ebd30f-npm-node-debug-0-1-0-package-tgz.lock
+56 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+57 silly lockFile b483ce0a-09110-0-4564999518916011-package tar:///home/manager/tmp/npm-6099-zc8OPzyZ/1394545409110-0.4564999518916011/package
+58 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+59 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+60 silly lockFile 90ea6d9c-ger-npm-node-debug-0-1-0-package /home/manager/.npm/node-debug/0.1.0/package
+61 verbose lock /home/manager/.npm/node-debug/0.1.0/package /home/manager/.npm/90ea6d9c-ger-npm-node-debug-0-1-0-package.lock
+62 silly lockFile 90ea6d9c-ger-npm-node-debug-0-1-0-package /home/manager/.npm/node-debug/0.1.0/package
+63 silly lockFile 90ea6d9c-ger-npm-node-debug-0-1-0-package /home/manager/.npm/node-debug/0.1.0/package
+64 verbose tar unpack /home/manager/.npm/node-debug/0.1.0/package.tgz
+65 silly lockFile 0520c162-ger-npm-node-debug-0-1-0-package tar:///home/manager/.npm/node-debug/0.1.0/package
+66 verbose lock tar:///home/manager/.npm/node-debug/0.1.0/package /home/manager/.npm/0520c162-ger-npm-node-debug-0-1-0-package.lock
+67 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+68 verbose lock tar:///home/manager/.npm/node-debug/0.1.0/package.tgz /home/manager/.npm/c9ebd30f-npm-node-debug-0-1-0-package-tgz.lock
+69 silly gunzTarPerm modes [ '755', '644' ]
+70 silly gunzTarPerm extractEntry package.json
+71 silly gunzTarPerm extractEntry README.md
+72 silly gunzTarPerm extractEntry bin/node-debug.js
+73 silly lockFile 0520c162-ger-npm-node-debug-0-1-0-package tar:///home/manager/.npm/node-debug/0.1.0/package
+74 silly lockFile 0520c162-ger-npm-node-debug-0-1-0-package tar:///home/manager/.npm/node-debug/0.1.0/package
+75 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+76 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+77 verbose chmod /home/manager/.npm/node-debug/0.1.0/package.tgz 644
+78 verbose chown /home/manager/.npm/node-debug/0.1.0/package.tgz [ 1000, 1000 ]
+79 silly lockFile 114cc59f--node-debug-node-debug-0-1-0-tgz https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz
+80 silly lockFile 114cc59f--node-debug-node-debug-0-1-0-tgz https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz
+81 silly lockFile eb98c5d3-node-debug-0-1-0 node-debug@0.1.0
+82 silly lockFile eb98c5d3-node-debug-0-1-0 node-debug@0.1.0
+83 silly lockFile 12d19e6e-node-debug node-debug@
+84 silly lockFile 12d19e6e-node-debug node-debug@
+85 silly resolved [ { name: 'node-debug',
+85 silly resolved     version: '0.1.0',
+85 silly resolved     description: 'Quick and easy wrapper for node-inspector',
+85 silly resolved     bin: { 'node-debug': 'bin/node-debug.js' },
+85 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+85 silly resolved     repository: { type: 'git', url: 'http://github.com/jfirebaugh/node-debug' },
+85 silly resolved     dependencies: { 'node-inspector': '~0.6.2', open: '~0.0.4' },
+85 silly resolved     author:
+85 silly resolved      { name: 'John Firebaugh',
+85 silly resolved        email: 'john.firebaugh@gmail.com',
+85 silly resolved        url: 'http://jfire.io' },
+85 silly resolved     license: 'BSD',
+85 silly resolved     readme: 'Debug with [node-inspector](https://github.com/dannycoates/node-inspector) really\neasily.\n\n## Usage\n\n```\n$ npm install -g node-debug\n$ node-debug path/to/your/script.js\n```\n\nResult: a Web Inspector debugger is open in your browser of choice, stopped\nat the first line of the script.\n',
+85 silly resolved     readmeFilename: 'README.md',
+85 silly resolved     bugs: { url: 'https://github.com/jfirebaugh/node-debug/issues' },
+85 silly resolved     homepage: 'https://github.com/jfirebaugh/node-debug',
+85 silly resolved     _id: 'node-debug@0.1.0',
+85 silly resolved     dist: { shasum: '2b9d833e212024a705306a58636290f040d874c8' },
+85 silly resolved     _from: 'node-debug@',
+85 silly resolved     _resolved: 'https://registry.npmjs.org/node-debug/-/node-debug-0.1.0.tgz' } ]
+86 info install node-debug@0.1.0 into /usr/local/lib
+87 info installOne node-debug@0.1.0
+88 info /usr/local/lib/node_modules/node-debug unbuild
+89 verbose tar unpack /home/manager/.npm/node-debug/0.1.0/package.tgz
+90 silly lockFile 127024ff-ocal-lib-node-modules-node-debug tar:///usr/local/lib/node_modules/node-debug
+91 verbose lock tar:///usr/local/lib/node_modules/node-debug /home/manager/.npm/127024ff-ocal-lib-node-modules-node-debug.lock
+92 silly lockFile c9ebd30f-npm-node-debug-0-1-0-package-tgz tar:///home/manager/.npm/node-debug/0.1.0/package.tgz
+93 verbose lock tar:///home/manager/.npm/node-debug/0.1.0/package.tgz /home/manager/.npm/c9ebd30f-npm-node-debug-0-1-0-package-tgz.lock
+94 silly gunzTarPerm modes [ '755', '644' ]
+95 error Error: EACCES, mkdir '/usr/local/lib/node_modules/node-debug'
+95 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/node-debug']
+95 error   errno: 3,
+95 error   code: 'EACCES',
+95 error   path: '/usr/local/lib/node_modules/node-debug',
+95 error   fstream_type: 'Directory',
+95 error   fstream_path: '/usr/local/lib/node_modules/node-debug',
+95 error   fstream_class: 'DirWriter',
+95 error   fstream_stack:
+95 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+95 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53',
+95 error      'Object.oncomplete (fs.js:107:15)' ] }
+96 error Please try running this command again as root/Administrator.
+97 error System Linux 3.11.0-12-generic
+98 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "node-debug"
+99 error cwd /develop/repos/botnet
+100 error node -v v0.10.26
+101 error npm -v 1.4.3
+102 error path /usr/local/lib/node_modules/node-debug
+103 error fstream_path /usr/local/lib/node_modules/node-debug
+104 error fstream_type Directory
+105 error fstream_class DirWriter
+106 error code EACCES
+107 error errno 3
+108 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/node-debug'
+109 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+109 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:37:53
+109 error fstream_stack Object.oncomplete (fs.js:107:15)
+110 verbose exit [ 3, true ]
